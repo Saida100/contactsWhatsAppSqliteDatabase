@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="190dp">
+            </corners>
+            <stroke android:color="#000"
+                android:width="1dp">
+            </stroke>
+            <size android:height="50dp"
+                android:width="200dp">
+
+            </size>
+
+        </shape>
+
+
+    </item>
+    <item
+        android:drawable="@drawable/ic_attach_file_black_24dp"
+        android:gravity="right|center_vertical"
+        android:width="24dp"
+        android:height="24dp"
+        android:right="40dp"
+
+        >
+
+    </item>
+    <item android:drawable="@drawable/ic_camera_alt_black_24dp"
+        android:gravity="right|center_vertical"
+        android:width="24dp"
+        android:height="24dp"
+        android:right="10dp"
+
+        >
+
+    </item>
+
+</layer-list>
