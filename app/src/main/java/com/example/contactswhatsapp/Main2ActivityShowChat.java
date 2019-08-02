@@ -326,6 +326,7 @@ public class Main2ActivityShowChat extends AppCompatActivity {
             //   fullerror = fullerror +"file auth is "+uri.getAuthority();
             fullerror = fullerror + uri.getAuthority();
             if (imageuri.getAuthority().equals("media")) {
+                Log.e("imageuri.Media", String.valueOf(imageuri.getAuthority()));
                 tempID = imageuri.toString();
                 tempID = tempID.substring(tempID.lastIndexOf("/") + 1);
                 id = tempID;
@@ -333,6 +334,7 @@ public class Main2ActivityShowChat extends AppCompatActivity {
                 String selector = MediaStore.Images.Media._ID + "=?";
                 actualfilepath = getColunmData(contenturi, selector, new String[]{id});
             } else if (imageuri.getAuthority().equals("com.android.providers.media.documents")) {
+                Log.e("imageuri.Media.Doc", String.valueOf(imageuri.getAuthority()));
                 tempID = DocumentsContract.getDocumentId(imageuri);
                 String[] split = tempID.split(":");
                 String type = split[0];
@@ -348,6 +350,8 @@ public class Main2ActivityShowChat extends AppCompatActivity {
                 String selector = "_id=?";
                 actualfilepath = getColunmData(contenturi, selector, new String[]{id});
             } else if (imageuri.getAuthority().equals("com.android.providers.downloads.documents")) {
+                Log.e("imageuri.Downloads", String.valueOf(imageuri.getAuthority()));
+
                 tempID = imageuri.toString();
                 tempID = tempID.substring(tempID.lastIndexOf("/") + 1);
                 id = tempID;
@@ -361,10 +365,14 @@ public class Main2ActivityShowChat extends AppCompatActivity {
                 Uri contenturi = null;
                 if (type.equals("primary")) {
                     actualfilepath = Environment.getExternalStorageDirectory() + "/" + id;
+                    Log.e("actualfilepath",actualfilepath);
+                    fileName=actualfilepath.substring(actualfilepath.lastIndexOf("/")+1);
                 }
             }
+
             File myFile = new File(actualfilepath);
             String temppath = uri.getPath();
+            Log.e("temppath",temppath);
             if (temppath.contains("//")) {
                 temppath = temppath.substring(temppath.indexOf("//") + 1);
             }
@@ -377,6 +385,10 @@ public class Main2ActivityShowChat extends AppCompatActivity {
             }
 
             Log.e(" myfile is ", myFile.getAbsolutePath());
+             String fileAbsolutePath=myFile.getAbsolutePath();
+             fileName=fileAbsolutePath.substring(fileAbsolutePath.lastIndexOf("/")+1);
+            Log.e(" fileName", fileName);
+
             //   readfile(myFile);
         } catch (Exception e) {
             Log.e(" read errro ", e.toString());

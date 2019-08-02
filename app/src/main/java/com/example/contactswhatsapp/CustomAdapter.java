@@ -14,6 +14,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import static android.support.constraint.Constraints.TAG;
+
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomViewHolder> {
 
     public static final int VIEW_TYPE_MESSAGE = 0;
@@ -60,19 +62,15 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
             switch (getItemViewType(position)) {
                 case VIEW_TYPE_MESSAGE:
                     MessageViewHolder messageViewHolder = (MessageViewHolder) customViewHolder;
-                  //  messageViewHolder.textView.setText(dataList.get(position).getData());
                     messageViewHolder.bindMessage(dataList.get(position));
-                    Log.e("getData", String.valueOf(dataList.get(position).getData()));
                     break;
                 case VIEW_TYPE_IMAGE:
                     ImagesViewHolder imagesViewHolder= (ImagesViewHolder) customViewHolder;
                     imagesViewHolder.bindImage(dataList.get(position));
-                    Log.e("getData", String.valueOf(dataList.get(position).getData()));
                     break;
                 case VIEW_TYPE_DOCUMENT:
                     DocumentViewHolder documentViewHolder= (DocumentViewHolder) customViewHolder;
                     documentViewHolder.bindDocument(dataList.get(position));
-                    Log.e("getData", String.valueOf(dataList.get(position).getData()));
                     break;
                 case VIEW_AUTO_MESSAGE:
                     AutoMessageViewHolder autoMessageViewHolder= (AutoMessageViewHolder) customViewHolder;
@@ -192,6 +190,18 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
         }
     }
+//    public void splitTextView(String text,TextView textView){
+//        int index=0;
+//        StringBuffer finalString=new StringBuffer();
+//        while (index < text.length()) {
+//            Log.i( "test = " , text.substring(index, Math.min(index + 20,text.length())));
+//            finalString.append(text.substring(index, Math.min(index + 20,text.length()))+"\n");
+//            index += 20;
+//        }
+//        Log.i( "finalString = " , String.valueOf(finalString));
+//
+//        textView.setText(finalString);
+//    }
 
 
 }

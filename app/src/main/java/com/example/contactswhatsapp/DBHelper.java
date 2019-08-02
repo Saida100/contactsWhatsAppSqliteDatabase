@@ -142,7 +142,6 @@ public class DBHelper extends SQLiteOpenHelper {
                         cursor.getInt(cursor.getColumnIndex("reciverId"))
 
                 ));
-                Log.e("DataTable", cursor.getString(cursor.getColumnIndex("data")));
                 cursor.moveToNext();
             }
             cursor.close();

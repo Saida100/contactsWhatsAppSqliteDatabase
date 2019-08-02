@@ -1,6 +1,7 @@
 package com.example.contactswhatsapp;
 
 import android.content.ContentResolver;
+import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -30,5 +31,10 @@ public class MainActivity extends AppCompatActivity implements Listener{
     @Override
     public void onItemClick(User user) {
 
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 }

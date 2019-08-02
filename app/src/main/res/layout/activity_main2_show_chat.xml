@@ -58,10 +58,17 @@
             android:background="@drawable/oval_shape_for_edittext"
             android:orientation="horizontal"
             android:weightSum="5">
+            <Button
+                android:id="@+id/emotion"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="right|center_vertical"
+                android:background="@drawable/icon_emoticon_black_24dp" />
 
             <EditText
                 android:id="@+id/text"
-                android:layout_width="250dp"
+                android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_weight="4"
@@ -69,6 +76,9 @@
                 android:textColor="#000"
                 android:textSize="18sp"
                 android:padding="7dp"
+                android:background="@null"
+                android:hint="Type a message"
+
                 />
 
             <Button
@@ -94,10 +104,12 @@
 
         <Button
             android:id="@+id/send"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
             android:background="@drawable/oval_shape" />
     </LinearLayout>
 

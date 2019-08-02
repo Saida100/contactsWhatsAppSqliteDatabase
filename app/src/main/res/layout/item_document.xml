@@ -37,7 +37,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#000"
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -57,17 +57,23 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="left|bottom"
+                    android:layout_gravity="left|bottom"
                     android:textColor="#928C8C"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="3dp"/>
 
                 <TextView
                     android:id="@+id/sendTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:gravity="right|bottom"
+                    android:layout_gravity="right|bottom"
                     android:textColor="#928C8C"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    android:layout_weight="1"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="3dp"/>
             </LinearLayout>
 
         </LinearLayout>
