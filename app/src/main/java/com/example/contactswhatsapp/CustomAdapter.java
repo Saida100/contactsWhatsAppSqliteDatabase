@@ -163,8 +163,13 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         }
         public void bindDocument(Data data){
             imageView.setImageResource(R.drawable.icon_file_red_24dp);
-            txtFileName.setText(data.getData());
             txtFileType.setText(data.getData().substring(data.getData().lastIndexOf(".")));
+            if(data.getData().length()>22){
+                txtFileName.setText(data.getData().substring(0,22).concat("..."));
+
+            } else{
+                txtFileName.setText(data.getData());
+            }
             txtFileSendTime.setText(data.getSendDataTime());
             Log.e("time",data.getSendDataTime());
             Log.e("fileType", data.getData().substring(data.getData().lastIndexOf(".")));
@@ -190,6 +195,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
         }
     }
+
+
+
 //    public void splitTextView(String text,TextView textView){
 //        int index=0;
 //        StringBuffer finalString=new StringBuffer();
