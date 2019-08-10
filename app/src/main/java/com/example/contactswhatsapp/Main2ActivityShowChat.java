@@ -46,13 +46,13 @@ import java.util.Map;
 import java.util.Random;
 
 public class Main2ActivityShowChat extends AppCompatActivity {
+
     private static final int CAMERA_REQUEST = 1888;
     private static final int MY_CAMERA_PERMISSION_CODE = 100;
     public static final int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 123;
     public static final int SELECT_IMAGE = 1234;
     private int request_codeChooseDocument = 1, FILE_SELECT_CODE = 101;
     public String actualfilepath = "";
-
 
     String name, number, photo_path;
     Toolbar toolbar;
@@ -270,8 +270,9 @@ public class Main2ActivityShowChat extends AppCompatActivity {
         dataList = dbHelper.getAllData(Integer.parseInt(userId));
         Log.e("sizeDataList", String.valueOf(dataList.size()));
         customAdapter = new CustomAdapter(this, dataList);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        ((LinearLayoutManager) recyclerView.getLayoutManager()).setStackFromEnd(true);
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.scrollToPosition(dataList.size() - 1);
         customAdapter.notifyDataSetChanged();
         recyclerView.setAdapter(customAdapter);
     }
@@ -287,21 +288,11 @@ public class Main2ActivityShowChat extends AppCompatActivity {
 
 
     public void showFileChooser() {
-        //    Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        Log.e("showFileChosser", "called");
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("*/*");
         startActivityForResult(intent, FILE_SELECT_CODE);
     }
 
-    public void choosePhotoFromGallery() {
-        Intent i = new Intent(Intent.ACTION_PICK,
-                android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-        final int ACTIVITY_SELECT_IMAGE = 1234;
-        startActivityForResult(i, ACTIVITY_SELECT_IMAGE);
-
-
-    }
 
     public void setDataToDataObject(String userId, int data_type, String dataInfo, String currentTime, int senderId) {
         Data data = new Data();
