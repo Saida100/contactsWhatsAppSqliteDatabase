@@ -58,7 +58,6 @@ public class DBHelper extends SQLiteOpenHelper {
         try {
             SQLiteDatabase db = this.getWritableDatabase();
             ContentValues contentValues = new ContentValues();
-        //    contentValues.put("id", data.getId());
             contentValues.put("data", data.getData());
             contentValues.put("data_type", data.getData_type());
             contentValues.put("sendDataTime", data.getSendDataTime());
@@ -73,9 +72,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
-
-
-    public List<User> getAllUsers2() {
+    public List<User> getAllUsers() {
         List<User> userList = new ArrayList<>();
         try {
             SQLiteDatabase db = this.getReadableDatabase();
@@ -88,7 +85,7 @@ public class DBHelper extends SQLiteOpenHelper {
                         cursor.getString(cursor.getColumnIndex("number")),
                         cursor.getInt(cursor.getColumnIndex("profileImage"))
 
-                        ));
+                ));
                 cursor.moveToNext();
             }
             cursor.close();
@@ -98,13 +95,11 @@ public class DBHelper extends SQLiteOpenHelper {
 
         return userList;
     }
+
     public List<User> getAllUsersByReceiverId() {
         List<User> userList = new ArrayList<>();
         try {
             SQLiteDatabase db = this.getReadableDatabase();
-//            String sql = "Select distinct(user_table.id)," +
-//                    "user_table.name,user_table.number,user_table.profileImage" +
-//                    " from user_table inner join data_table on user_table.id=data_table.reciverId ";
             String sql = "Select distinct(user_table.name)," +
                     "user_table.id,user_table.number,user_table.profileImage" +
                     " from user_table inner join data_table on user_table.id=data_table.reciverId group by user_table.id ";
@@ -121,7 +116,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 ));
                 cursor.moveToNext();
             }
-            Log.e("users",userList.toString());
+            Log.e("users", userList.toString());
             cursor.close();
         } catch (Exception e) {
             e.printStackTrace();
@@ -135,7 +130,7 @@ public class DBHelper extends SQLiteOpenHelper {
         try {
             SQLiteDatabase db = this.getReadableDatabase();
 
-            String sql="select * from data_table where reciverId="+reciverId;
+            String sql = "select * from data_table where reciverId=" + reciverId;
             Cursor cursor = db.rawQuery(sql, null);
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {
@@ -156,12 +151,13 @@ public class DBHelper extends SQLiteOpenHelper {
         }
         return dataList;
     }
+
     public List<Data> getAllMessages() {
         List<Data> dataList = new ArrayList<>();
         try {
             SQLiteDatabase db = this.getReadableDatabase();
 
-            String sql="select * from data_table";
+            String sql = "select * from data_table";
             Cursor cursor = db.rawQuery(sql, null);
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {

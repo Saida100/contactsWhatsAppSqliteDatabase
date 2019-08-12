@@ -48,7 +48,6 @@ public class Main2ActivityShowChat extends AppCompatActivity {
     private static final int CAMERA_REQUEST = 1888;
     private static final int MY_CAMERA_PERMISSION_CODE = 100;
     public static final int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 123;
-    public static final int SELECT_IMAGE = 1234;
     private int request_codeChooseDocument = 1, FILE_SELECT_CODE = 101;
     public String actualfilepath = "";
 
@@ -96,6 +95,7 @@ public class Main2ActivityShowChat extends AppCompatActivity {
         number = bundle.getString("number");
         toolbar.setTitle(name);
         setRecyclerView2();
+
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -157,7 +157,6 @@ public class Main2ActivityShowChat extends AppCompatActivity {
                 Toast.makeText(this, "camera permission granted", Toast.LENGTH_LONG).show();
                 Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(cameraIntent, CAMERA_REQUEST);
-                Log.e("calledStartActivity", "startActivityForResult");
             } else {
                 Toast.makeText(this, "camera permission denied", Toast.LENGTH_LONG).show();
             }
@@ -167,7 +166,7 @@ public class Main2ActivityShowChat extends AppCompatActivity {
                 Toast.makeText(this, "write external granted", Toast.LENGTH_LONG).show();
             } else {
                 // Permission Denied
-                Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "write external permission denied", Toast.LENGTH_SHORT).show();
             }
             return;
         }

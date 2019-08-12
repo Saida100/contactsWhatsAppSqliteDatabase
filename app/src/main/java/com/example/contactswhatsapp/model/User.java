@@ -7,16 +7,15 @@ public class User {
     private int id;
 
 
-
-
     public User() {
 
     }
-    public User(int id,String userName,String telNumber,int profileImage){
-        this.id=id;
-        this.userName=userName;
-        this.telNumber=telNumber;
-        this.profileImage=profileImage;
+
+    public User(int id, String userName, String telNumber, int profileImage) {
+        this.id = id;
+        this.userName = userName;
+        this.telNumber = telNumber;
+        this.profileImage = profileImage;
 
 
     }
@@ -45,7 +44,6 @@ public class User {
     public void setProfileImage(int profileImage) {
         this.profileImage = profileImage;
     }
-
 
 
     public int getId() {

@@ -69,7 +69,7 @@ public class ContactsFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        userList = dbHelper.getAllUsers2();
+        userList = dbHelper.getAllUsers();
         adapterContacts = new AdapterContacts(userList, getContext(), new Listener() {
             @Override
             public void onItemClick(User user) {
@@ -94,14 +94,11 @@ public class ContactsFragment extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         listener = (Listener) context;
-        Log.e("called " ,"onAttached");
 
     }
 
 
     protected void requestLocationPermission() {
-        Log.e("called","requestLocationPermission");
-
         if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
                 android.Manifest.permission.READ_CONTACTS)) {
             // show UI part if you want here to show some rationale !!!
@@ -113,7 +110,7 @@ public class ContactsFragment extends Fragment {
         }
 
     }
-//
+
     @Override
       public void onRequestPermissionsResult(int requestCode,
                                            String permissions[], int[] grantResults) {
@@ -125,7 +122,6 @@ public class ContactsFragment extends Fragment {
                     getContact1();
 
                 } else {
-
                     // permission denied,Disable the
                     // functionality that depends on this permission.
                 }
@@ -155,8 +151,6 @@ public class ContactsFragment extends Fragment {
             Log.e("isAddedUser", String.valueOf(isAddedUser));
             countUser++;
         }
-        Log.e("calledGetContact", String.valueOf(countUser));
-
         phones.close();
     }
 

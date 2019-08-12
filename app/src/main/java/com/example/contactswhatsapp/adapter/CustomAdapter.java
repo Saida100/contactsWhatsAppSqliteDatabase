@@ -94,7 +94,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
     @Override
     public int getItemViewType(int position) {
-        // return  dataList.get(position).getData_type();
         switch (dataList.get(position).getData_type()) {
             case 0:
                 return VIEW_TYPE_MESSAGE;
@@ -135,42 +134,42 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
 
     public class ImagesViewHolder extends CustomViewHolder {
-        ImageView imageView;
-        TextView txtLastPhotedTime;
+        ImageView photoImageView;
+        TextView lastPhotoTimeTextView;
         public ImagesViewHolder(@NonNull View itemView) {
             super(itemView);
-            imageView = itemView.findViewById(R.id.photo);
-            txtLastPhotedTime=itemView.findViewById(R.id.lastPhotoTime);
+            photoImageView = itemView.findViewById(R.id.photo);
+            lastPhotoTimeTextView =itemView.findViewById(R.id.lastPhotoTime);
         }
         public void bindImage(Data data){
-            Picasso.get().load(data.getData().trim()).into(imageView);
-            txtLastPhotedTime.setText(data.getSendDataTime());
+            Picasso.get().load(data.getData().trim()).into(photoImageView);
+            lastPhotoTimeTextView.setText(data.getSendDataTime());
         }
     }
 
 
     public class DocumentViewHolder extends CustomViewHolder {
-        ImageView imageView;
-        TextView txtFileName,txtFileType,txtFileSendTime;
+        ImageView iconImageView;
+        TextView fileNameTextView, fileTypeTextView, fileSendTimeTextView;
 
         public DocumentViewHolder(@NonNull View itemView) {
             super(itemView);
-            imageView=itemView.findViewById(R.id.icon);
-            txtFileName=itemView.findViewById(R.id.nameFile);
-            txtFileType=itemView.findViewById(R.id.typeFile);
-            txtFileSendTime=itemView.findViewById(R.id.sendTime);
+            iconImageView =itemView.findViewById(R.id.icon);
+            fileNameTextView =itemView.findViewById(R.id.nameFile);
+            fileTypeTextView =itemView.findViewById(R.id.typeFile);
+            fileSendTimeTextView =itemView.findViewById(R.id.sendTime);
 
         }
         public void bindDocument(Data data){
-            imageView.setImageResource(R.drawable.icon_file_red_24dp);
-            txtFileType.setText(data.getData().substring(data.getData().lastIndexOf(".")));
+            iconImageView.setImageResource(R.drawable.icon_file_red_24dp);
+            fileTypeTextView.setText(data.getData().substring(data.getData().lastIndexOf(".")));
             if(data.getData().length()>22){
-                txtFileName.setText(data.getData().substring(0,22).concat("..."));
+                fileNameTextView.setText(data.getData().substring(0,22).concat("..."));
 
             } else{
-                txtFileName.setText(data.getData());
+                fileNameTextView.setText(data.getData());
             }
-            txtFileSendTime.setText(data.getSendDataTime());
+            fileSendTimeTextView.setText(data.getSendDataTime());
             Log.e("time",data.getSendDataTime());
             Log.e("fileType", data.getData().substring(data.getData().lastIndexOf(".")));
 
@@ -180,17 +179,17 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
     }
 
     public class AutoMessageViewHolder extends CustomViewHolder {
-        TextView textMessage ,textLastSpokeTime;
+        TextView messageTextView, lastSpokeTimeTextView;
 
         public AutoMessageViewHolder(@NonNull View itemView) {
             super(itemView);
-            textMessage = itemView.findViewById(R.id.message);
-            textLastSpokeTime = itemView.findViewById(R.id.lastSpokeTime);
+            messageTextView = itemView.findViewById(R.id.message);
+            lastSpokeTimeTextView = itemView.findViewById(R.id.lastSpokeTime);
         }
 
         public void bindAutoMessage(Data data) {
-            textMessage.setText(data.getData().toString());
-            textLastSpokeTime.setText(data.getSendDataTime().toString());
+            messageTextView.setText(data.getData().toString());
+            lastSpokeTimeTextView.setText(data.getSendDataTime().toString());
             Log.e("data.getData", data.getData().toString());
 
         }

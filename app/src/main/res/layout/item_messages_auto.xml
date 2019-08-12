@@ -28,16 +28,15 @@
                 android:id="@+id/message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:maxEms="5"
+                android:minEms="1"
                 android:paddingLeft="10dp"
                 android:textColor="#000"
                 android:textSize="16sp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="5dp"
-                android:maxEms="5"
-                android:minEms="1"
-
 
 
                 />
@@ -47,14 +46,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right|bottom"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:gravity="right"
                 android:textColor="#928C8C"
                 android:textSize="12sp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="5dp"
-
-
 
 
                 />

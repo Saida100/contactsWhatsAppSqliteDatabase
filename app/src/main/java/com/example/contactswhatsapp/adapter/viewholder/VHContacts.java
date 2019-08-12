@@ -14,22 +14,22 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class VHContacts extends RecyclerView.ViewHolder {
 
 
-    private TextView txtNameUser;
-    private TextView txtTelNumber;
-    private CircleImageView image;
+    private TextView userNameTextView;
+    private TextView phoneNumberTextView;
+    private CircleImageView profileImageView;
 
     public VHContacts(@NonNull View itemView) {
         super(itemView);
-        txtNameUser = itemView.findViewById(R.id.name);
-        txtTelNumber = itemView.findViewById(R.id.tel_number);
-        image=itemView.findViewById(R.id.profilImage);
+        userNameTextView = itemView.findViewById(R.id.name);
+        phoneNumberTextView = itemView.findViewById(R.id.tel_number);
+        profileImageView =itemView.findViewById(R.id.profilImage);
 
     }
 
     public void bind(final User user, final Listener listener) {
-        txtNameUser.setText(user.getUserName());
-        txtTelNumber.setText(user.getTelNumber());
-        image.setImageResource(R.drawable.ic_face_black_24dp);
+        userNameTextView.setText(user.getUserName());
+        phoneNumberTextView.setText(user.getTelNumber());
+        profileImageView.setImageResource(R.drawable.ic_face_black_24dp);
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

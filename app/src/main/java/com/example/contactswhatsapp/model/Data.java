@@ -9,7 +9,7 @@ public class Data {
     private String sendDataTime;
     private int reciverId;
 
-    public Data(){
+    public Data() {
 
     }
 
