@@ -1,15 +1,10 @@
-package com.example.contactswhatsapp;
-
-import java.io.Serializable;
-import java.util.List;
+package com.example.contactswhatsapp.model;
 
 public class User {
     private String userName;
     private String telNumber;
     private int profileImage;
     private int id;
-    private int dataId;
-    private Data data;
 
 
 
@@ -26,21 +21,6 @@ public class User {
 
     }
 
-    public Data getData() {
-        return data;
-    }
-
-    public void setData(Data data) {
-        this.data = data;
-    }
-
-    public int getDataId() {
-        return dataId;
-    }
-
-    public void setDataId(int dataId) {
-        this.dataId = dataId;
-    }
 
     public String getUserName() {
         return userName;

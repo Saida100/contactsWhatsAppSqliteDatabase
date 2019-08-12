@@ -1,4 +1,4 @@
-package com.example.contactswhatsapp;
+package com.example.contactswhatsapp.model;
 
 public class Data {
 

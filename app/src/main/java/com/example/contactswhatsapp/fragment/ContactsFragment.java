@@ -1,33 +1,29 @@
-package com.example.contactswhatsapp;
+package com.example.contactswhatsapp.fragment;
 
-import android.Manifest;
-import android.app.AlertDialog;
-import android.content.ContentResolver;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-import java.io.Serializable;
+import com.example.contactswhatsapp.DBHelper;
+import com.example.contactswhatsapp.Listener;
+import com.example.contactswhatsapp.activity.Main2ActivityShowChat;
+import com.example.contactswhatsapp.R;
+import com.example.contactswhatsapp.model.User;
+import com.example.contactswhatsapp.adapter.AdapterContacts;
+
 import java.util.ArrayList;
 import java.util.List;
 // how use permissions in fragment

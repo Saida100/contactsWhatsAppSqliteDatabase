@@ -1,4 +1,4 @@
-package com.example.contactswhatsapp;
+package com.example.contactswhatsapp.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -10,11 +10,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.contactswhatsapp.model.Data;
+import com.example.contactswhatsapp.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
-
-import static android.support.constraint.Constraints.TAG;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomViewHolder> {
 

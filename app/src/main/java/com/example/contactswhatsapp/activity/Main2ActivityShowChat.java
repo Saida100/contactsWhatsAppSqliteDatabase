@@ -1,21 +1,17 @@
-package com.example.contactswhatsapp;
+package com.example.contactswhatsapp.activity;
 
 import android.Manifest;
 import android.app.Activity;
-import android.content.ActivityNotFoundException;
-import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.provider.DocumentsContract;
-import android.provider.DocumentsProvider;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
@@ -27,7 +23,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,14 +30,17 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.example.contactswhatsapp.DBHelper;
+import com.example.contactswhatsapp.R;
+import com.example.contactswhatsapp.adapter.CustomAdapter;
+import com.example.contactswhatsapp.model.Data;
+
 import java.io.File;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
 
 public class Main2ActivityShowChat extends AppCompatActivity {

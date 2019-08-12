@@ -1,15 +1,17 @@
-package com.example.contactswhatsapp;
+package com.example.contactswhatsapp.activity;
 
-import android.content.ContentResolver;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import java.util.List;
+import com.example.contactswhatsapp.Listener;
+import com.example.contactswhatsapp.R;
+import com.example.contactswhatsapp.ViewPagerAdapter;
+import com.example.contactswhatsapp.model.User;
 
-public class MainActivity extends AppCompatActivity implements Listener{
+public class MainActivity extends AppCompatActivity implements Listener {
 
 
     TabLayout tabLayout;

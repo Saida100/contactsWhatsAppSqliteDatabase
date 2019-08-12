@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         app:cardElevation="1dp"
-        card_view:cardBackgroundColor="#B4E0BB"
+        card_view:cardBackgroundColor="#dffad9"
         card_view:cardCornerRadius="7dp"
         card_view:cardUseCompatPadding="true"
         >
@@ -22,7 +22,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:background="#B4E0BB"
+    android:background="#dffad9"
     >
     <TextView
         android:id="@+id/message"
@@ -46,6 +46,17 @@
         android:textColor="#928C8C"
         android:textSize="12sp"
         android:layout_marginRight="5dp"
+
+        />
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/check_mark_whatsapp"
+        android:layout_marginRight="5dp"
+        android:layout_gravity="right|bottom"
+
+
+
 
         />
 </LinearLayout>

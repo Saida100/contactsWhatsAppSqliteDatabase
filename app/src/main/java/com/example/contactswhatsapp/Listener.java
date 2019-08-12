@@ -1,6 +1,6 @@
 package com.example.contactswhatsapp;
 
-import java.util.List;
+import com.example.contactswhatsapp.model.User;
 
 public interface Listener {
 

@@ -10,14 +10,12 @@
     card_view:cardBackgroundColor="#fff"
     card_view:cardUseCompatPadding="true">
 
-
-
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:id="@+id/profilImage"
             android:paddingLeft="15dp"
-
+            android:src="@drawable/ic_face_black_24dp"
 
             />
 
@@ -25,7 +23,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_weight="3"
             android:layout_marginLeft="50dp"
             android:weightSum="2">
 

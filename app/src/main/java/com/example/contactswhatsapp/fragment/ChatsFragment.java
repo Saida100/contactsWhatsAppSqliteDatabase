@@ -1,4 +1,4 @@
-package com.example.contactswhatsapp;
+package com.example.contactswhatsapp.fragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,10 +13,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.contactswhatsapp.DBHelper;
+import com.example.contactswhatsapp.Listener;
+import com.example.contactswhatsapp.activity.Main2ActivityShowChat;
+import com.example.contactswhatsapp.R;
+import com.example.contactswhatsapp.model.User;
+import com.example.contactswhatsapp.adapter.AdapterChats;
+
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 
 public class ChatsFragment extends Fragment {

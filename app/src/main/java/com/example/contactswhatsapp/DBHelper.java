@@ -7,10 +7,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.example.contactswhatsapp.model.Data;
+import com.example.contactswhatsapp.model.User;
+
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -101,9 +102,13 @@ public class DBHelper extends SQLiteOpenHelper {
         List<User> userList = new ArrayList<>();
         try {
             SQLiteDatabase db = this.getReadableDatabase();
-            String sql = "Select distinct(user_table.id)," +
-                    "user_table.name,user_table.number,user_table.profileImage" +
-                    " from user_table inner join data_table on user_table.id=data_table.reciverId ";
+//            String sql = "Select distinct(user_table.id)," +
+//                    "user_table.name,user_table.number,user_table.profileImage" +
+//                    " from user_table inner join data_table on user_table.id=data_table.reciverId ";
+            String sql = "Select distinct(user_table.name)," +
+                    "user_table.id,user_table.number,user_table.profileImage" +
+                    " from user_table inner join data_table on user_table.id=data_table.reciverId group by user_table.id ";
+
 
             Cursor cursor = db.rawQuery(sql, null);
             cursor.moveToFirst();
@@ -116,7 +121,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 ));
                 cursor.moveToNext();
             }
-            Log.e("",userList.toString());
+            Log.e("users",userList.toString());
             cursor.close();
         } catch (Exception e) {
             e.printStackTrace();

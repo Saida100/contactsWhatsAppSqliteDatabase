@@ -5,6 +5,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import com.example.contactswhatsapp.fragment.ChatsFragment;
+import com.example.contactswhatsapp.fragment.ContactsFragment;
+
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
     public ViewPagerAdapter(FragmentManager fm) {
